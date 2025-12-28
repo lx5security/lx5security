@@ -1,43 +1,41 @@
 /*
-  # ==================================================
-  # LX5 Security — HTTP Security Headers
-  # Platform: Cloudflare Pages
-  # Mode: Hardened + CSP Report-Only
-  # ==================================================
+  # =====================================================
+  # LX5 Security — HTTP Security Headers (Cloudflare Pages)
+  # =====================================================
 
-  # ----------------------------------
-  # Transport Security (HTTPS only)
-  # ----------------------------------
+  # ---------------------------------
+  # Transport Security
+  # ---------------------------------
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-  # ----------------------------------
+  # ---------------------------------
   # Clickjacking Protection
-  # ----------------------------------
+  # ---------------------------------
   X-Frame-Options: DENY
 
-  # ----------------------------------
+  # ---------------------------------
   # MIME Sniffing Protection
-  # ----------------------------------
+  # ---------------------------------
   X-Content-Type-Options: nosniff
 
-  # ----------------------------------
+  # ---------------------------------
   # Referrer Privacy
-  # ----------------------------------
+  # ---------------------------------
   Referrer-Policy: strict-origin-when-cross-origin
 
-  # ----------------------------------
+  # ---------------------------------
   # Browser Feature Restrictions
-  # ----------------------------------
+  # ---------------------------------
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), clipboard-read=(), clipboard-write=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=()
 
-  # ----------------------------------
+  # ---------------------------------
   # Cross-Origin Protections
-  # ----------------------------------
+  # ---------------------------------
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-site
 
-  # ----------------------------------
+  # ---------------------------------
   # Content Security Policy (REPORT-ONLY)
-  # Monitoring mode — does NOT block content
-  # ----------------------------------
-  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'
+  # Safe mode — does NOT break site
+  # ---------------------------------
+  Content-Security-Policy-Report-Only: default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
