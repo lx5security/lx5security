@@ -7,52 +7,62 @@
   <!-- Primary SEO -->
   <title>LX5 Security | Cybersecurity Projects & Research</title>
   <meta name="description" content="LX5 Security — cybersecurity projects, cryptography research, and hands-on learning. Archives in progress." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#000000" />
-
-  <!-- Canonical (WWW) -->
   <link rel="canonical" href="https://www.lx5security.com/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
-  <!-- Open Graph -->
+  <!-- Social Preview (Open Graph) -->
   <meta property="og:title" content="LX5 Security" />
-  <meta property="og:description" content="Cybersecurity projects, research, and learning by building." />
+  <meta property="og:description" content="Cybersecurity projects, research, and learning by building. Archives in progress." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lx5security.com/" />
-  <!-- Use an absolute URL for social preview images -->
   <meta property="og:image" content="https://www.lx5security.com/logo.png" />
   <meta property="og:image:alt" content="LX5 Security logo" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Twitter/X Preview -->
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="LX5 Security" />
   <meta name="twitter:description" content="Cybersecurity projects, research, and learning by building." />
   <meta name="twitter:image" content="https://www.lx5security.com/logo.png" />
 
-  <!-- Favicons (optional but recommended) -->
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <!-- Favicons (optional; uses your existing logo) -->
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Sitemap hint (Google will still use robots.txt + submitted sitemap, but this is fine) -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.lx5security.com/sitemap.xml" />
 
-  <!-- Structured Data (helps Google understand your site) -->
+  <!-- Google Search Console (OPTIONAL)
+       You do NOT need this if you verified via DNS (Domain property).
+       If you ever choose "URL-prefix" verification, paste your token below:
+  -->
+  <!-- <meta name="google-site-verification" content="PASTE_TOKEN_HERE" /> -->
+
+  <!-- Structured Data (helps Google understand the site) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "LX5 Security",
-    "url": "https://www.lx5security.com/",
-    "description": "Cybersecurity projects, cryptography research, and hands-on learning.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "LX5 Security",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.lx5security.com/logo.png"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "LX5 Security",
+        "url": "https://www.lx5security.com/",
+        "logo": "https://www.lx5security.com/logo.png",
+        "sameAs": [
+          "https://github.com/lx5security",
+          "https://x.com/LX5security",
+          "https://instagram.com/lx5"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "LX5 Security",
+        "url": "https://www.lx5security.com/"
       }
-    }
+    ]
   }
   </script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -65,9 +75,9 @@
         <p class="tagline">Archives in progress.</p>
 
         <div class="links">
-          <a class="btn" href="https://github.com/lx5security" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://x.com/LX5security" target="_blank" rel="noopener">X</a>
-          <a class="btn" href="https://instagram.com/lx5" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://github.com/lx5security" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://x.com/LX5security" target="_blank" rel="noopener noreferrer">X</a>
+          <a class="btn" href="https://instagram.com/lx5" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a class="btn ghost" href="mailto:hello@lx5security.com">Contact</a>
         </div>
       </div>
@@ -81,64 +91,55 @@
         <li>
           <strong>Salsa20 Demo</strong><br />
           Introductory cryptography project exploring the Salsa20 stream cipher.<br />
-          <a href="https://github.com/lx5security/salsa20-demo" target="_blank" rel="noopener">View on GitHub →</a>
+          <a href="https://github.com/lx5security/salsa20-demo" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
         </li>
 
-        <!-- REMOVED: "LX5 Security Site" project (per your request) -->
+        <!-- Removed: LX5 Security Site project (per your request) -->
       </ul>
     </section>
 
-    <!-- About (ADDED) -->
+    <!-- About -->
     <section class="card">
       <h2>About</h2>
       <p>
-        LX5 Security is a personal cybersecurity archive focused on building skills through hands-on projects,
-        writeups, and research. This site is evolving — new updates drop as the archive grows.
+        LX5 Security is a personal cybersecurity archive focused on learning-by-building:
+        labs, write-ups, tools, and research notes as skills develop over time.
       </p>
     </section>
 
-    <!-- Focus Areas (ADDED) -->
+    <!-- Focus Areas -->
     <section class="card">
       <h2>Focus Areas</h2>
       <ul class="projects">
-        <li><strong>Blue Team</strong><br />Detection, monitoring, incident response fundamentals.</li>
-        <li><strong>AppSec</strong><br />Web security basics, secure coding, common vuln patterns.</li>
-        <li><strong>Cryptography</strong><br />Practical crypto concepts with small implementations.</li>
-        <li><strong>Labs</strong><br />Hands-on practice: tools, challenges, and mini builds.</li>
+        <li><strong>Cryptography</strong><br />Foundations, stream ciphers, and practical implementations.</li>
+        <li><strong>Web Security</strong><br />OWASP concepts, secure design, and real-world testing.</li>
+        <li><strong>Blue Team</strong><br />Detection fundamentals, logging, and incident thinking.</li>
+        <li><strong>Cloud Basics</strong><br />Security concepts for modern cloud environments.</li>
       </ul>
     </section>
 
-    <!-- Tools (ADDED) -->
+    <!-- AI Identity + Clarification (the “AI overview” style, but clean + safe) -->
     <section class="card">
-      <h2>Tools & Stack</h2>
-      <ul class="projects">
-        <li><strong>Core</strong><br />Linux, Git/GitHub, networking basics.</li>
-        <li><strong>Security</strong><br />Wireshark, Burp Suite, Nmap, OWASP resources, MITRE ATT&CK.</li>
-        <li><strong>Learning</strong><br />TryHackMe / Hack The Box (as applicable), writeups and notes.</li>
-      </ul>
-    </section>
-
-    <!-- Writeups (ADDED) -->
-    <section class="card">
-      <h2>Writeups / Notes</h2>
+      <h2>AI Identity & Clarification</h2>
       <p>
-        Coming soon: short, clear notes from what I’m learning + building.
+        Some content on this site may be assisted by AI for drafting, summarization, or clarity.
+        Final responsibility, edits, and publishing decisions remain human-led.
       </p>
-      <!-- Optional: add links later without changing design -->
-      <!--
-      <ul class="projects">
-        <li><strong>Post Title</strong><br />One-line summary.<br /><a href="/notes/post-slug/">Read →</a></li>
-      </ul>
-      -->
-    </section>
 
-    <!-- Contact / CTA (ADDED) -->
-    <section class="card">
-      <h2>Contact</h2>
-      <p>
-        For collabs, questions, or opportunities:
-        <a href="mailto:hello@lx5security.com">hello@lx5security.com</a>
-      </p>
+      <ul class="projects">
+        <li>
+          <strong>Not affiliated with any hacktivist group</strong><br />
+          LX5 Security is an independent personal learning brand and is not connected to “Anonymous” or any similar group.
+        </li>
+        <li>
+          <strong>Educational, defensive-first intent</strong><br />
+          Content is shared for cybersecurity learning, awareness, and responsible practice.
+        </li>
+        <li>
+          <strong>No instructions for wrongdoing</strong><br />
+          The site does not promote or encourage illegal access, disruption, or harm.
+        </li>
+      </ul>
     </section>
 
     <!-- Footer -->
