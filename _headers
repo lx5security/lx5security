@@ -1,41 +1,52 @@
 /*
-  # ===============================
-  # LX5 Security — HTTP Security Headers
-  # ===============================
+  #################################################################
+  # LX5 Security — HTTP Security Headers (Cloudflare Pages)
+  # Purpose: Defensive hardening + educational visibility
+  #################################################################
 
-  # -------------------------------
-  # Transport Security
-  # -------------------------------
+  ###############################################################
+  # Transport Security (HTTPS enforcement)
+  ###############################################################
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-  # -------------------------------
+  ###############################################################
   # Clickjacking Protection
-  # -------------------------------
+  ###############################################################
   X-Frame-Options: DENY
 
-  # -------------------------------
+  ###############################################################
   # MIME Sniffing Protection
-  # -------------------------------
+  ###############################################################
   X-Content-Type-Options: nosniff
 
-  # -------------------------------
+  ###############################################################
   # Referrer Privacy
-  # -------------------------------
+  ###############################################################
   Referrer-Policy: strict-origin-when-cross-origin
 
-  # -------------------------------
+  ###############################################################
   # Browser Feature Restrictions
-  # -------------------------------
+  ###############################################################
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), clipboard-read=(), clipboard-write=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=()
 
-  # -------------------------------
+  ###############################################################
   # Cross-Origin Protections
-  # -------------------------------
+  ###############################################################
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-site
 
-  # -------------------------------
-  # Content Security Policy (REPORT-ONLY)
-  # Safe monitoring mode — does NOT block content
-  # -------------------------------
-  Content-Security-Policy-Report-Only: default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+  ###############################################################
+  # Content Security Policy (REPORT-ONLY MODE)
+  # Safe monitoring — does NOT block content
+  ###############################################################
+  Content-Security-Policy-Report-Only: 
+    default-src 'self';
+    script-src 'self';
+    style-src 'self';
+    img-src 'self' data: https:;
+    font-src 'self';
+    connect-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
