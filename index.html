@@ -1,258 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Primary SEO -->
-  <title>LX5 Security</title>
-  <meta name="description" content="LX5 Security — Archives in progress. Personal cybersecurity archive and learning hub." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Canonical (WWW) -->
+  <!-- SEO -->
+  <title>LX5 Security | Cybersecurity Projects & Research</title>
+  <meta name="description" content="LX5 Security — cybersecurity projects, cryptography research, and hands-on learning. Archives in progress." />
   <link rel="canonical" href="https://www.lx5security.com/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="LX5 Security" />
+  <!-- Social Preview -->
   <meta property="og:title" content="LX5 Security" />
-  <meta property="og:description" content="Archives in progress. Personal cybersecurity archive and learning hub." />
+  <meta property="og:description" content="Cybersecurity projects, research, and learning by building." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lx5security.com/" />
-  <!-- If you have an OG image, keep this. If not, remove it or add one later. -->
-  <meta property="og:image" content="https://www.lx5security.com/og.png" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LX5 Security" />
-  <meta name="twitter:description" content="Archives in progress. Personal cybersecurity archive and learning hub." />
-  <meta name="twitter:image" content="https://www.lx5security.com/og.png" />
-
-  <!-- Favicons (optional - keep if you have them) -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "LX5 Security",
-    "url": "https://www.lx5security.com/",
-    "description": "LX5 Security — Archives in progress. Personal cybersecurity archive and learning hub."
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#000000;            /* true black */
-      --panel:#0b0d12;         /* near-black panel */
-      --panel2:#0f131a;
-      --text:#f2f4f8;
-      --muted:#aeb6c4;
-      --stroke:rgba(255,255,255,.10);
-      --stroke2:rgba(255,255,255,.14);
-      --accent:#22c55e;        /* subtle green accent */
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    /* Layout: keeps footer at the bottom */
-    .page{
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .wrap{
-      width:min(920px, 92vw);
-      margin:0 auto;
-      padding:34px 0 22px;
-    }
-
-    /* Header */
-    .top{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      margin-bottom:18px;
-    }
-
-    .logoBadge{
-      width:54px;height:54px;
-      border:2px solid rgba(34,197,94,.35);
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      background: rgba(34,197,94,.06);
-      color: var(--text);
-      font-weight:800;
-      letter-spacing:.5px;
-    }
-
-    h1{
-      margin:0;
-      font-size:34px;
-      line-height:1.1;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .sub{
-      margin-top:6px;
-      color: var(--muted);
-      font-size:16px;
-    }
-
-    /* Buttons row */
-    .links{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin:16px 0 22px;
-    }
-    .pill{
-      text-decoration:none;
-      color: var(--text);
-      border:1px solid var(--stroke2);
-      background: rgba(255,255,255,.04);
-      padding:11px 16px;
-      border-radius:18px;
-      font-weight:600;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition: transform .08s ease, border-color .12s ease, background .12s ease;
-    }
-    .pill:hover{
-      transform: translateY(-1px);
-      border-color: rgba(34,197,94,.45);
-      background: rgba(34,197,94,.07);
-    }
-
-    /* Projects section */
-    .card{
-      border:1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border-radius:20px;
-      padding:20px;
-    }
-    .card h2{
-      margin:0 0 14px;
-      font-size:22px;
-      font-weight:800;
-    }
-    .project{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius:16px;
-      padding:18px;
-    }
-    .projectTitle{
-      margin:0 0 8px;
-      font-size:22px;
-      font-weight:800;
-    }
-    .projectDesc{
-      margin:0 0 14px;
-      color: var(--muted);
-      font-size:16px;
-      line-height:1.5;
-    }
-    .projectLink{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight:800;
-      color: var(--text);
-      text-decoration:none;
-      border-bottom:2px solid rgba(34,197,94,.55);
-      padding-bottom:3px;
-    }
-    .projectLink:hover{
-      border-bottom-color: var(--accent);
-    }
-
-    /* Footer pinned at bottom */
-    footer{
-      margin-top:auto; /* THIS keeps it down */
-      padding:18px 0 26px;
-      color: rgba(242,244,248,.65);
-      text-align:center;
-    }
-
-    /* Mobile tweaks */
-    @media (max-width:520px){
-      h1{font-size:28px}
-      .logoBadge{width:50px;height:50px}
-      .card{padding:16px}
-      .project{padding:16px}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="page">
-    <main class="wrap">
-      <header class="top">
-        <!-- Logo badge (kept simple like your screenshot) -->
-        <div class="logoBadge" aria-label="LX5 logo">LX5</div>
+  <main class="wrap">
+    <header class="hero">
+      <img class="avatar" src="logo.png" alt="LX5 Security logo" />
 
-        <div>
-          <h1>LX5 Security</h1>
-          <div class="sub">Archives in progress.</div>
+      <div class="heroText">
+        <h1>LX5 Security</h1>
+        <p class="tagline">Archives in progress.</p>
+
+        <div class="links">
+          <a class="btn" href="https://github.com/lx5security" target="_blank">GitHub</a>
+          <a class="btn" href="https://x.com/LX5security" target="_blank">X</a>
+          <a class="btn" href="https://instagram.com/lx5" target="_blank">Instagram</a>
+          <a class="btn ghost" href="mailto:hello@lx5security.com">Contact</a>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <nav class="links" aria-label="primary links">
-        <!-- Update these hrefs to your real links -->
-        <a class="pill" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a class="pill" href="https://x.com/" target="_blank" rel="noopener">X</a>
-        <a class="pill" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <a class="pill" href="mailto:hello@lx5security.com">Contact</a>
-      </nav>
+    <!-- Projects -->
+    <section class="card">
+      <h2>Projects</h2>
 
-      <section class="card" aria-label="projects">
-        <h2>Projects</h2>
+      <ul class="projects">
+        <li>
+          <strong>Salsa20 Demo</strong><br />
+          Introductory cryptography project exploring the Salsa20 stream cipher.<br />
+          <a href="https://github.com/lx5security/salsa20-demo" target="_blank">View on GitHub →</a>
+        </li>
 
-        <!-- ONLY ONE PROJECT (LX5 Security Site REMOVED) -->
-        <article class="project">
-          <h3 class="projectTitle">Salsa20 Demo</h3>
-          <p class="projectDesc">
-            Introductory cryptography project exploring the Salsa20 stream cipher.
-          </p>
-          <!-- Replace with your actual repo URL -->
-          <a class="projectLink" href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" rel="noopener">
-            View on GitHub <span aria-hidden="true">→</span>
-          </a>
-        </article>
-      </section>
-    </main>
+        <li>
+          <strong>LX5 Security Site</strong><br />
+          Personal cybersecurity archive and learning hub.<br />
+          <a href="https://github.com/lx5security/lx5security" target="_blank">View on GitHub →</a>
+        </li>
+      </ul>
+    </section>
 
-    <footer>
-      © <span id="y"></span> LX5 Security. All rights reserved.
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 LX5 Security. All rights reserved.</p>
     </footer>
-  </div>
-
-  <script>
-    // Footer year
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Optional: force canonical to WWW at runtime (safe backup)
-    // If you already redirect at Cloudflare, this just reinforces canonical behavior.
-    (function () {
-      var host = location.hostname.toLowerCase();
-      if (host === "lx5security.com") {
-        // keep path + query + hash
-        location.replace("https://www.lx5security.com" + location.pathname + location.search + location.hash);
-      }
-    })();
-  </script>
+  </main>
 </body>
 </html>
