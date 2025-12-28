@@ -1,65 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO -->
+  <!-- Primary SEO -->
   <title>LX5 Security | Cybersecurity Projects & Research</title>
-  <meta name="description" content="LX5 Security — cybersecurity projects, cryptography research, and hands-on learning. Archives in progress." />
+  <meta name="description" content="LX5 Security — a personal cybersecurity archive featuring projects, research notes, and learning demos." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <!-- Canonical (WWW is primary) -->
   <link rel="canonical" href="https://www.lx5security.com/" />
 
-  <!-- Social Preview -->
-  <meta property="og:title" content="LX5 Security" />
-  <meta property="og:description" content="Cybersecurity projects, research, and learning by building." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.lx5security.com/" />
+  <!-- Theme / Icons -->
+  <meta name="theme-color" content="#0b0b0f" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LX5 Security" />
+  <meta property="og:title" content="LX5 Security | Cybersecurity Projects & Research" />
+  <meta property="og:description" content="Cybersecurity projects, demos, and research notes by LX5 Security." />
+  <meta property="og:url" content="https://www.lx5security.com/" />
+  <meta property="og:image" content="https://www.lx5security.com/og.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LX5 Security | Cybersecurity Projects & Research" />
+  <meta name="twitter:description" content="Cybersecurity projects, demos, and research notes by LX5 Security." />
+  <meta name="twitter:image" content="https://www.lx5security.com/og.jpg" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LX5 Security",
+    "url": "https://www.lx5security.com/",
+    "description": "Personal cybersecurity archive featuring projects, research notes, and learning demos.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LX5 Security",
+      "url": "https://www.lx5security.com/"
+    }
+  }
+  </script>
+
+  <!-- Styles -->
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0b0f;
+      --panel: #11121a;
+      --text: #f3f4f6;
+      --muted: #a7aab5;
+      --line: #25263a;
+      --accent: #35d07f;
+      --max: 980px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(53,208,127,.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 18px 60px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(53,208,127,.35);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .sub {
+      margin-top: 4px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    main {
+      margin-top: 30px;
+      background: rgba(17,18,26,.7);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    .project {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
+    }
+
+    .project p {
+      margin: 6px 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <header class="hero">
-      <img class="avatar" src="logo.png" alt="LX5 Security logo" />
-
-      <div class="heroText">
-        <h1>LX5 Security</h1>
-        <p class="tagline">Archives in progress.</p>
-
-        <div class="links">
-          <a class="btn" href="https://github.com/lx5security" target="_blank">GitHub</a>
-          <a class="btn" href="https://x.com/LX5security" target="_blank">X</a>
-          <a class="btn" href="https://instagram.com/lx5" target="_blank">Instagram</a>
-          <a class="btn ghost" href="mailto:hello@lx5security.com">Contact</a>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">LX5</div>
+        <div>
+          <h1>LX5 Security</h1>
+          <div class="sub">Archives in progress.</div>
         </div>
       </div>
+
+      <nav>
+        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/YOUR_HANDLE" target="_blank" rel="noopener">X</a>
+        <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:contact@lx5security.com">Contact</a>
+      </nav>
     </header>
 
-    <!-- Projects -->
-    <section class="card">
+    <main>
       <h2>Projects</h2>
 
-      <ul class="projects">
-        <li>
-          <strong>Salsa20 Demo</strong><br />
-          Introductory cryptography project exploring the Salsa20 stream cipher.<br />
-          <a href="https://github.com/lx5security/salsa20-demo" target="_blank">View on GitHub →</a>
-        </li>
+      <!-- ONLY PROJECT -->
+      <div class="project">
+        <strong>Salsa20 Demo</strong>
+        <p>Introductory cryptography project exploring the Salsa20 stream cipher.</p>
+        <a href="https://github.com/YOUR_USERNAME/salsa20-demo" target="_blank" rel="noopener">
+          View on GitHub →
+        </a>
+      </div>
+    </main>
 
-        <li>
-          <strong>LX5 Security Site</strong><br />
-          Personal cybersecurity archive and learning hub.<br />
-          <a href="https://github.com/lx5security/lx5security" target="_blank">View on GitHub →</a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2025 LX5 Security. All rights reserved.</p>
+    <footer>
+      © <span id="year"></span> LX5 Security. All rights reserved.
     </footer>
-  </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
