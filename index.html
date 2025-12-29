@@ -46,9 +46,9 @@
 
         <li>
           <strong>LX5 Aegis</strong><br />
-          A Linux File Integrity Monitoring (FIM) agent written in Rust that creates
-          cryptographic baselines of critical system files and alerts on unauthorized
-          changes in real time. Designed to run as a systemd service.<br />
+          A Linux File Integrity Monitoring (FIM) agent written in Rust that creates cryptographic
+          baselines of critical system files and alerts on unauthorized changes in real time.
+          Designed to run as a systemd service.<br />
           <a href="https://github.com/lx5security/lx5-aegis" target="_blank" rel="noopener">
             View on GitHub →
           </a>
@@ -72,6 +72,38 @@
         </li>
 
       </ul>
+    </section>
+
+    <!-- BLOG / WRITING -->
+    <section class="card">
+      <h2>Writing</h2>
+
+      <article>
+        <h3>Building a File Integrity Monitor (FIM) in Rust</h3>
+
+        <p>
+          File Integrity Monitoring (FIM) is a foundational defensive security control,
+          but it’s often treated as a black box. This post documents how I built
+          <strong>LX5 Aegis</strong>, a lightweight Linux FIM agent written in Rust,
+          to understand how integrity monitoring works internally.
+        </p>
+
+        <p>
+          The project uses cryptographic SHA-256 baselines, real-time filesystem events,
+          and systemd integration to detect unauthorized changes to critical system files.
+        </p>
+
+        <p>
+          The focus is on design decisions, security trade-offs, and lessons learned from
+          building a defensive security tool from first principles.
+        </p>
+
+        <p>
+          <a href="https://github.com/lx5security/lx5-aegis" target="_blank" rel="noopener">
+            → Read the project on GitHub
+          </a>
+        </p>
+      </article>
     </section>
 
     <!-- ABOUT -->
