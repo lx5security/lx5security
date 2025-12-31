@@ -1,47 +1,163 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LX5 Security</title>
-  <meta name="description" content="LX5 Security — Security projects. Learning by building." />
 
+  <!-- SEO -->
+  <title>LX5 Security | Cybersecurity Projects & Research</title>
+  <meta name="description" content="LX5 Security — cybersecurity projects, cryptography research, and defensive-first learning. Archives in progress." />
+  <link rel="canonical" href="https://www.lx5security.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LX5 Security" />
+  <meta property="og:description" content="Cybersecurity projects, cryptography research, and responsible learning." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.lx5security.com/" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="wrap">
+
+    <!-- HERO -->
     <header class="hero">
-      <img class="avatar" src="logo.png.png" alt="logo.png" />
+      <!-- ✅ Your profile picture kept exactly as-is -->
+      <img class="avatar" src="logo.png" alt="LX5 Security logo" />
+
       <div class="heroText">
         <h1>LX5 Security</h1>
-        <p class="tagline">Security projects • Learning by building</p>
+        <p class="tagline">Archives in progress.</p>
 
         <div class="links">
-          <a class="btn" href="https://github.com/lx5security" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="https://x.com/LX5security" target="_blank" rel="noreferrer">X</a>
-          <a class="btn" href="https://instagram.com/lx5" target="_blank" rel="noreferrer">Instagram</a>
-          <a class="btn ghost" href="mailto:hello@lx5security.com">Email</a>
+          <a class="btn" href="https://github.com/lx5security" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://x.com/LX5security" target="_blank" rel="noopener">X</a>
+          <a class="btn" href="https://instagram.com/lx5" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn ghost" href="mailto:hello@lx5security.com">Contact</a>
         </div>
       </div>
     </header>
 
+    <!-- PROJECTS -->
     <section class="card">
-      <h2>Featured</h2>
-      <div class="project">
-        <div class="projectTitle">salsa20-demo</div>
-        <div class="projectDesc">Intro cryptography project implementing Salsa20 + libsodium.</div>
-        <a class="smallLink" href="https://github.com/lx5security/salsa20-demo" target="_blank" rel="noreferrer">View repo →</a>
-      </div>
+      <h2>Projects</h2>
+      <ul class="projects">
+
+        <li>
+          <strong>LX5 Aegis</strong><br />
+          A Linux File Integrity Monitoring (FIM) agent written in Rust that creates cryptographic
+          baselines of critical system files and alerts on unauthorized changes in real time.
+          Designed to run as a systemd service.<br />
+          <a href="https://github.com/lx5security/lx5-aegis" target="_blank" rel="noopener">
+            View on GitHub →
+          </a>
+        </li>
+
+        <li>
+          <strong>Salsa20 Demo</strong><br />
+          Introductory cryptography project exploring the Salsa20 stream cipher.<br />
+          <a href="https://github.com/lx5security/salsa20-demo" target="_blank" rel="noopener">
+            View on GitHub →
+          </a>
+        </li>
+
+        <li>
+          <strong>LX5 Header Scan</strong><br />
+          A lightweight security tool that inspects HTTP response headers and highlights
+          missing protections such as CSP, HSTS, and clickjacking defenses.<br />
+          <a href="https://github.com/lx5security/lx5-header-scan" target="_blank" rel="noopener">
+            View on GitHub →
+          </a>
+        </li>
+
+      </ul>
     </section>
 
+    <!-- BLOG / WRITING -->
     <section class="card">
-      <h2>Status</h2>
-      <p class="muted">Archives in progress.</p>
+      <h2>Writing</h2>
+
+      <article>
+        <h3>Building a File Integrity Monitor (FIM) in Rust</h3>
+
+        <!-- ✅ Blog image added + caption + lazy-load -->
+        <figure style="margin: 14px 0;">
+          <img
+            src="IMG_3015.png"
+            alt="Diagram-style illustration representing defensive security monitoring and the LX5 Aegis project"
+            loading="lazy"
+            decoding="async"
+            style="width: 100%; height: auto; border-radius: 12px; display: block;"
+          />
+          <figcaption style="margin-top: 10px; opacity: 0.85; font-size: 0.95rem;">
+            Visual concept: how a lightweight File Integrity Monitor (FIM) helps detect unauthorized changes to critical system files.
+          </figcaption>
+        </figure>
+
+        <p>
+          File Integrity Monitoring (FIM) is a foundational defensive security control,
+          but it’s often treated as a black box. This post documents how I built
+          <strong>LX5 Aegis</strong>, a lightweight Linux FIM agent written in Rust,
+          to understand how integrity monitoring works internally.
+        </p>
+
+        <p>
+          The project uses cryptographic SHA-256 baselines, real-time filesystem events,
+          and systemd integration to detect unauthorized changes to critical system files.
+        </p>
+
+        <p>
+          The focus is on design decisions, security trade-offs, and lessons learned from
+          building a defensive security tool from first principles.
+        </p>
+
+        <p>
+          <a href="https://github.com/lx5security/lx5-aegis" target="_blank" rel="noopener">
+            → Read the project on GitHub
+          </a>
+        </p>
+      </article>
     </section>
 
+    <!-- ABOUT -->
+    <section class="card">
+      <h2>About</h2>
+      <p>
+        LX5 Security is a personal cybersecurity archive focused on learning,
+        experimentation, and defensive-first thinking. This site documents
+        concepts, projects, and research as skills evolve.
+      </p>
+    </section>
+
+    <!-- FOCUS AREAS -->
+    <section class="card">
+      <h2>Focus Areas</h2>
+      <ul>
+        <li><strong>Cryptography</strong> — fundamentals, stream ciphers, and theory</li>
+        <li><strong>Web Security</strong> — OWASP concepts, secure design, testing</li>
+        <li><strong>Blue Team</strong> — detection, logging, incident thinking</li>
+        <li><strong>Cloud Basics</strong> — security concepts for modern environments</li>
+      </ul>
+    </section>
+
+    <!-- RESPONSIBLE USE -->
+    <section class="card">
+      <h2>Responsible Use Notice</h2>
+      <p>
+        All material presented on this site is intended for educational and
+        defensive security purposes only. Readers are responsible for ensuring
+        that any knowledge applied complies with applicable laws, ethical
+        standards, and organizational policies.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-      <span class="muted">© <span id="year"></span> LX5 Security</span>
+      <p>© 2025 LX5 Security. All rights reserved.</p>
     </footer>
+
   </main>
 
   <script src="script.js"></script>

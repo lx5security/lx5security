@@ -121,3 +121,6 @@ h2{
   border-top: 1px solid var(--border);
 }
 
+.projects li {
+  margin-bottom: 16px;
+}
