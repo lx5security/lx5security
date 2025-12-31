@@ -24,7 +24,7 @@
 
     <!-- HERO -->
     <header class="hero">
-      <!-- PROFILE IMAGE (UNCHANGED) -->
+      <!-- ✅ Your profile picture kept exactly as-is -->
       <img class="avatar" src="logo.png" alt="LX5 Security logo" />
 
       <div class="heroText">
@@ -82,12 +82,19 @@
       <article>
         <h3>Building a File Integrity Monitor (FIM) in Rust</h3>
 
-        <!-- BLOG IMAGE (NEW, ONLY HERE) -->
-        <img
-          src="fim-diagram.png"
-          alt="Diagram illustrating LX5 Aegis file integrity monitoring architecture"
-          style="width:100%; max-width:900px; margin:1.5rem auto; display:block; border-radius:12px;"
-        />
+        <!-- ✅ Blog image added + caption + lazy-load -->
+        <figure style="margin: 14px 0;">
+          <img
+            src="IMG_3015.png"
+            alt="Diagram-style illustration representing defensive security monitoring and the LX5 Aegis project"
+            loading="lazy"
+            decoding="async"
+            style="width: 100%; height: auto; border-radius: 12px; display: block;"
+          />
+          <figcaption style="margin-top: 10px; opacity: 0.85; font-size: 0.95rem;">
+            Visual concept: how a lightweight File Integrity Monitor (FIM) helps detect unauthorized changes to critical system files.
+          </figcaption>
+        </figure>
 
         <p>
           File Integrity Monitoring (FIM) is a foundational defensive security control,
