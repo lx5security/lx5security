@@ -81,6 +81,20 @@
       <article>
         <h3>Building a File Integrity Monitor (FIM) in Rust</h3>
 
+        <!-- BLOG IMAGE (lazy-loaded) -->
+        <figure style="margin: 14px 0;">
+          <img
+            src="./aegis.png"
+            alt="LX5 Aegis — File Integrity Monitor in Rust (demo output)"
+            loading="lazy"
+            decoding="async"
+            style="width: 100%; height: auto; border-radius: 12px; display: block;"
+          />
+          <figcaption style="margin-top: 8px; opacity: 0.85; font-size: 0.95rem;">
+            LX5 Aegis running on Ubuntu — baseline loaded and monitoring critical system files.
+          </figcaption>
+        </figure>
+
         <p>
           File Integrity Monitoring (FIM) is a foundational defensive security control,
           but it’s often treated as a black box. This post documents how I built
@@ -97,20 +111,6 @@
           The focus is on design decisions, security trade-offs, and lessons learned from
           building a defensive security tool from first principles.
         </p>
-
-        <!-- Blog image (lazy-loaded) -->
-        <figure style="margin: 16px 0;">
-          <img
-            src="fim-rust.png"
-            alt="Illustration of a security briefing with network-style diagrams and the LX5 flag"
-            loading="lazy"
-            decoding="async"
-            style="width:100%; height:auto; border-radius: 14px; display:block;"
-          />
-          <figcaption style="margin-top:10px; opacity:0.85; font-size:0.95rem;">
-            Building LX5 Aegis — a lightweight Rust File Integrity Monitor (FIM) with SHA-256 baselines and real-time alerts.
-          </figcaption>
-        </figure>
 
         <p>
           <a href="https://github.com/lx5security/lx5-aegis" target="_blank" rel="noopener">
